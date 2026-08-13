@@ -1,0 +1,36 @@
+- tactic: reconnaissance
+  technique_name: Active Scanning
+  technique_id: T1595.001
+  name: NMAP Horizontal Scan (FLAB RED Team Version)
+  description: Runs NMAP horizontal scan
+  executors:
+  - name: sh
+    platform: linux
+    command: 'python3 #{host.python.horizontal.script} --timing 4'
+    code: null
+    language: null
+    build_target: null
+    payloads: []
+    uploads: []
+    timeout: 28800
+    parsers: []
+    cleanup:
+    - ''
+    variations: []
+    additional_info: {}
+  requirements:
+  - module: plugins.stockpile.app.requirements.paw_provenance
+    relationship_match:
+    - source: host.python.horizontal.script
+      edge: ''
+      target: ''
+  privilege: ''
+  repeatable: false
+  buckets:
+  - reconnaissance
+  additional_info: {}
+  access: {}
+  singleton: true
+  plugin: ''
+  delete_payload: true
+  id: 70f67627-8f6d-4a47-83c1-259f21de21b3

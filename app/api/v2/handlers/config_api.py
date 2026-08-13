@@ -62,10 +62,11 @@ class ConfigApi(BaseApi):
         )
 
         try:
-            self._api_manager.update_main_config(
-                prop=data['prop'],
-                value=data['value']
-            )
+            for item in data["updates"]:
+                self._api_manager.update_main_config(
+                    prop=item['prop'],
+                    value=item['value']
+                )
         except ConfigUpdateNotAllowed as ex:
             raise JsonHttpForbidden(
                 error='Update not allowed',

@@ -1,0 +1,37 @@
+- tactic: collection
+  technique_name: 'Data Staged: Local Data Staging'
+  technique_id: T1074.001
+  name: FLAB - upload big.txt
+  description: Uploads a text file which will be used for web dir enumeration with
+    a combination of gobuster
+  executors:
+  - name: sh
+    platform: linux
+    command: 'mv ./big.txt -t #{host.dir.staged} && echo #{host.dir.staged}/big.txt'
+    code: null
+    language: null
+    build_target: null
+    payloads:
+    - big.txt
+    uploads: []
+    timeout: 60
+    parsers: []
+    cleanup: []
+    variations: []
+    additional_info: {}
+  requirements:
+  - module: plugins.stockpile.app.requirements.paw_provenance
+    relationship_match:
+    - source: host.dir.staged
+      edge: ''
+      target: ''
+  privilege: ''
+  repeatable: false
+  buckets:
+  - collection
+  additional_info: {}
+  access: {}
+  singleton: true
+  plugin: ''
+  delete_payload: true
+  id: 918d91da-06c3-4884-829c-eebe0ce24555

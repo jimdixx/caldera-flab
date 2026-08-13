@@ -1,0 +1,21 @@
+- requirements:
+  - module: plugins.stockpile.app.requirements.paw_provenance
+    relationship_match:
+    - source: host.dir.staged
+      edge: ''
+      target: ''
+  name: FLAB - Cleanup ability
+  description: The ability that cleans /root/flab_staged directory with all its binaries
+  tactic: stealth
+  technique_id: T1070.004
+  technique_name: 'Indicator Removal on Host: File Deletion'
+  singleton: true
+  executors:
+  - cleanup: []
+    timeout: 60
+    platform: linux
+    name: sh
+    payloads: []
+    parsers: []
+    command: 'rm -rf #{host.dir.staged}'
+  id: 42dab5f1-ca55-48be-ba78-dbac26c63b35

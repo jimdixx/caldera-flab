@@ -1,0 +1,7 @@
+name: FLAB - Linpeas Upload
+description: Upload Linpeas to a target machine
+atomic_ordering:
+- cdb083d9-3d5e-479a-90a5-8a9c22f801e2
+- aa622a1b-597c-4a95-a161-3b40696382a2
+adversary_id: fdec4f3d-d4cc-4604-8529-2263691895d5
+objective: 495a9828-cab1-44dd-a0ca-66e58177d8cc

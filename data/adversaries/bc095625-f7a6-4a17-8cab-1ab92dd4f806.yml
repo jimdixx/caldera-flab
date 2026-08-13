@@ -1,0 +1,8 @@
+name: 001 - FLAB - Malicious URL & Active Scanning Scenariou
+description: Runing First Scenariou
+atomic_ordering:
+- 558909f6-4ce4-4989-8221-636cc83eaa86
+- c4e71c04-80b0-434d-ac5a-c0c12236e359
+- 0d7fa350-d147-41a7-ab79-71a2cf9fb876
+adversary_id: bc095625-f7a6-4a17-8cab-1ab92dd4f806
+objective: 495a9828-cab1-44dd-a0ca-66e58177d8cc

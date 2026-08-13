@@ -1,0 +1,16 @@
+- requirements: []
+  name: My test ability
+  description: My description
+  tactic: discovery
+  technique_id: T2000.01
+  technique_name: 'Account Discovery: Domain Account'
+  executors:
+  - cleanup:
+    - ifconfig -a
+    timeout: 60
+    platform: darwin
+    name: sh
+    payloads: []
+    parsers: []
+    command: whoami
+  id: d88b0265-2900-44b6-8b9d-9d1d5f3b1d3a

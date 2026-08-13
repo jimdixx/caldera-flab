@@ -1,0 +1,47 @@
+- tactic: collection
+  technique_name: Data from Local System
+  technique_id: T1005
+  name: Upload linpeas_flab.sh to a target machine
+  description: Transfers and runs our custom linpeas_flab.sh on a selected target
+    machine.
+  executors:
+  - name: sh
+    platform: linux
+    command: 'mv ./linpeas_flab.sh ./run_linpeas.sh -t #{host.dir.staged} && chmod
+      +x #{host.dir.staged}/linpeas_flab.sh && chmod +x  #{host.dir.staged}/run_linpeas.sh
+      && mkdir -p #{host.dir.staged}/linpeas && mv #{host.dir.staged}/linpeas_flab.sh
+      #{host.dir.staged}/linpeas'
+    code: null
+    language: null
+    build_target: null
+    payloads:
+    - linpeas_flab.sh
+    - run_linpeas.sh
+    uploads: []
+    timeout: 3600
+    parsers:
+    - module: plugins.stockpile.app.parsers.basic
+      parserconfigs:
+      - source: host.linpeas.file
+        edge: ''
+        target: ''
+        custom_parser_vals: {}
+    cleanup: []
+    variations: []
+    additional_info: {}
+  requirements:
+  - module: plugins.stockpile.app.requirements.paw_provenance
+    relationship_match:
+    - source: host.dir.staged
+      edge: ''
+      target: ''
+  privilege: ''
+  repeatable: false
+  buckets:
+  - collection
+  additional_info: {}
+  access: {}
+  singleton: true
+  plugin: ''
+  delete_payload: false
+  id: aa622a1b-597c-4a95-a161-3b40696382a2

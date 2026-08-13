@@ -1,0 +1,7 @@
+name: FLAB - Upload Sliver
+description: Uploads and runs sliver beacon
+atomic_ordering:
+- cdb083d9-3d5e-479a-90a5-8a9c22f801e2
+- 8942bfd4-7b74-465e-9b5f-2c62c03d89f5
+adversary_id: ee2af4a2-f4e8-43ea-b258-8f33906006ef
+objective: 495a9828-cab1-44dd-a0ca-66e58177d8cc

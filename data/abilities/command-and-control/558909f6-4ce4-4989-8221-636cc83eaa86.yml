@@ -1,0 +1,15 @@
+- requirements: []
+  name: Malicious IP/URL Contact Simulation
+  description: Simulates contacting pre-defined malicious IP addresses.
+  tactic: command-and-control
+  technique_id: T1071.001
+  technique_name: 'Application Layer Protocol: Web Protocols'
+  executors:
+  - cleanup: []
+    timeout: 60
+    platform: linux
+    name: sh
+    payloads: []
+    parsers: []
+    command: curl https://static-flab3-240.flab.cesnet.cz
+  id: 558909f6-4ce4-4989-8221-636cc83eaa86

@@ -1,0 +1,6 @@
+name: 005 - FLAB - Crypto mining simulation
+description: Crypto mining simulation
+atomic_ordering:
+- 46da2385-cf37-49cb-ba4b-a739c7a19de4
+adversary_id: 5ad63867-f4a8-4913-9745-dd07f5977965
+objective: 495a9828-cab1-44dd-a0ca-66e58177d8cc

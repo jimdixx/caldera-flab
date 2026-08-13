@@ -1,0 +1,7 @@
+name: FLAB - Upload Necessary Payloads
+description: 005 - FLAB - Upload Necessary Payloads
+atomic_ordering:
+- cdb083d9-3d5e-479a-90a5-8a9c22f801e2
+- 029acfd0-2d05-4db4-bd94-86abf02bd92d
+adversary_id: 6450ea6c-c2d3-4a2e-9e5e-4da43fb1106b
+objective: 495a9828-cab1-44dd-a0ca-66e58177d8cc

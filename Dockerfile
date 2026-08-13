@@ -40,7 +40,7 @@ COPY --from=ui-build /usr/src/app/plugins/magma/dist /usr/src/app/plugins/magma/
 # From https://docs.docker.com/build/building/best-practices/
 # Install caldera dependencies
 RUN apt-get update && \
-apt-get --no-install-recommends -y install git curl unzip python3-dev python3-pip mingw-w64 zlib1g gcc && \
+apt-get --no-install-recommends -y install git curl unzip python3-dev python3-pip mingw-w64 zlib1g gcc vim net-tools && \
 rm -rf /var/lib/apt/lists/*
 
 # Install Golang from source (apt version is too out-of-date)
@@ -119,4 +119,8 @@ EXPOSE 8022
 # Default FTP port for FTP C2 channel
 EXPOSE 2222
 
-ENTRYPOINT ["python3", "server.py"]
+# Custom starter.py
+
+COPY starter.py /usr/src/app/starter.py
+
+ENTRYPOINT ["python3", "-u", "starter.py"]
