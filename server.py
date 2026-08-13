@@ -86,6 +86,7 @@ def run_tasks(services, run_vue_server=False):
         raise KeyboardInterrupt
 
     signal.signal(signal.SIGTERM, _handle_sigterm)
+    signal.signal(signal.SIGINT, _handle_sigterm)
 
     loop = asyncio.new_event_loop()
     # The event loop is set here, before any async work begins.  Services
