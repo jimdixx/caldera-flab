@@ -1,0 +1,35 @@
+- tactic: reconnaissance
+  technique_name: Active Scanning
+  technique_id: T1595.001
+  name: NMAP Scan (FLAB RED TEAM Version)
+  description: Runs NMAP scan
+  executors:
+  - name: sh
+    platform: linux
+    command: 'nmap -p- #{host.collected.ip} -T4 -sV --reason'
+    code: null
+    language: null
+    build_target: null
+    payloads: []
+    uploads: []
+    timeout: 3600
+    parsers: []
+    cleanup: []
+    variations: []
+    additional_info: {}
+  requirements:
+  - module: plugins.stockpile.app.requirements.paw_provenance
+    relationship_match:
+    - source: host.collected.ip
+      edge: ''
+      target: ''
+  privilege: ''
+  repeatable: false
+  buckets:
+  - reconnaissance
+  additional_info: {}
+  access: {}
+  singleton: true
+  plugin: ''
+  delete_payload: false
+  id: 0d7fa350-d147-41a7-ab79-71a2cf9fb876

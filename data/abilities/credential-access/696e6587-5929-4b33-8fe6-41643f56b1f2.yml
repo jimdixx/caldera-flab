@@ -1,0 +1,36 @@
+- tactic: credential-access
+  technique_name: File and Directory Discovery
+  technique_id: T1083
+  name: FLAB - run gobuster to simulate "DoS" attack
+  description: Runs gobuster dir enumeration
+  executors:
+  - name: sh
+    platform: linux
+    command: 'gobuster dir --url https://cesnet.cz/ --wordlist #{host.dir.staged}/big.txt
+      -b 301 -t 20'
+    code: null
+    language: null
+    build_target: null
+    payloads: []
+    uploads: []
+    timeout: 600
+    parsers: []
+    cleanup: []
+    variations: []
+    additional_info: {}
+  requirements:
+  - module: plugins.stockpile.app.requirements.paw_provenance
+    relationship_match:
+    - source: host.dir.staged
+      edge: ''
+      target: ''
+  privilege: ''
+  repeatable: false
+  buckets:
+  - credential-access
+  additional_info: {}
+  access: {}
+  singleton: false
+  plugin: ''
+  delete_payload: true
+  id: 696e6587-5929-4b33-8fe6-41643f56b1f2

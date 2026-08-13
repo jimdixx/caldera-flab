@@ -1,0 +1,8 @@
+name: FLAB - Linpeas Output Download
+description: Exfilters linpeas content
+atomic_ordering:
+- 9b75f3f4-fcef-462d-88eb-54c95a48f589
+- 300157e5-f4ad-4569-b533-9d1fa0e74d74
+- ea713bc4-63f0-491c-9a6f-0b01d560b87e
+adversary_id: 7967a1cf-a9b3-49ab-bbce-ace74745f794
+objective: 495a9828-cab1-44dd-a0ca-66e58177d8cc

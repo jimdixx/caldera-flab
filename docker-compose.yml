@@ -1,0 +1,26 @@
+version: '3'
+
+services:
+  caldera:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      args:
+        TZ: "UTC" # Timezone to use in container
+        VARIANT: "full"
+    image: caldera:latest
+    restart: unless-stopped
+    ports:
+      - "127.0.0.1:8888:8888"
+      - "8443:8443"
+      - "7010:7010"
+      - "7011:7011/udp"
+      - "7012:7012"
+      - "8853:8853"
+      - "8022:8022"
+      - "2222:2222"
+    volumes:
+      - ./conf:/usr/src/app/conf
+      - ./data:/usr/src/app/data
+      # - ./plugins:/usr/src/app/plugins
+    command: --log DEBUG

@@ -1,0 +1,42 @@
+- tactic: execution
+  technique_name: 'User Execution: Malicious Link'
+  technique_id: T1204.001
+  name: FLAB - Run malicious_curls.py script
+  description: Runs malicious_curls.py script to  to simulate a user
+  executors:
+  - name: sh
+    platform: linux
+    command: 'python3 -m venv #{host.dir.staged}/VENV && . #{host.dir.staged}/VENV/bin/activate
+      && pip3 install -q requests && python3 #{host.curls.script}; s=$?; deactivate
+      2>/dev/null; rm -rf #{host.dir.staged}/VENV; exit $s'
+    code: null
+    language: null
+    build_target: null
+    payloads: []
+    uploads: []
+    timeout: 3720
+    parsers: []
+    cleanup: []
+    variations: []
+    additional_info: {}
+  requirements:
+  - module: plugins.stockpile.app.requirements.paw_provenance
+    relationship_match:
+    - source: host.dir.staged
+      edge: ''
+      target: ''
+  - module: plugins.stockpile.app.requirements.paw_provenance
+    relationship_match:
+    - source: host.curls.script
+      edge: ''
+      target: ''
+  privilege: ''
+  repeatable: false
+  buckets:
+  - execution
+  additional_info: {}
+  access: {}
+  singleton: true
+  plugin: ''
+  delete_payload: true
+  id: 9533a1b8-5002-4539-8e22-98c25d48c338

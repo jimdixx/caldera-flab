@@ -1,0 +1,42 @@
+- tactic: collection
+  technique_name: 'Data Staged: Local Data Staging'
+  technique_id: T1074.001
+  name: FLAB - Upload horizontal_scan.py
+  description: Uploads horizontal_scan.py script
+  executors:
+  - name: sh
+    platform: linux
+    command: 'mv ./horizontal_scan.py -t  #{host.dir.staged} && echo #{host.dir.staged}/horizontal_scan.py'
+    code: null
+    language: null
+    build_target: null
+    payloads:
+    - horizontal_scan.py
+    uploads: []
+    timeout: 60
+    parsers:
+    - module: plugins.stockpile.app.parsers.basic
+      parserconfigs:
+      - source: host.python.horizontal.script
+        edge: ''
+        target: ''
+        custom_parser_vals: {}
+    cleanup: []
+    variations: []
+    additional_info: {}
+  requirements:
+  - module: plugins.stockpile.app.requirements.paw_provenance
+    relationship_match:
+    - source: host.dir.staged
+      edge: ''
+      target: ''
+  privilege: ''
+  repeatable: false
+  buckets:
+  - collection
+  additional_info: {}
+  access: {}
+  singleton: true
+  plugin: ''
+  delete_payload: true
+  id: 22115c1b-966f-45c2-8b6d-097e44d4090e

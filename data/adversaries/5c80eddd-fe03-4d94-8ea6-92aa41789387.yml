@@ -1,0 +1,6 @@
+name: 003 - FLAB - Large Content Downloading
+description: Simulation of malicious download.
+atomic_ordering:
+- f81bc7db-61ab-4083-8231-e76c4a0ca5d6
+adversary_id: 5c80eddd-fe03-4d94-8ea6-92aa41789387
+objective: 495a9828-cab1-44dd-a0ca-66e58177d8cc

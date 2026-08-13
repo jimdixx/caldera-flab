@@ -1,0 +1,6 @@
+name: 000 - FLAB - Discover the IP address
+description: IP address discovery
+atomic_ordering:
+- 3c73b47eb1df2065b8f45449b754c859
+adversary_id: e978e872-6069-4238-887e-144bff1d4707
+objective: 495a9828-cab1-44dd-a0ca-66e58177d8cc

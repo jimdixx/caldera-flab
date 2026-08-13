@@ -1,0 +1,43 @@
+- tactic: collection
+  technique_name: 'Data Staged: Local Data Staging'
+  technique_id: T1074.001
+  name: FLAB - Upload malicious_curls.py payload to run scenarious
+  description: Upload necessary payloads, such as malicious_curls.py and others, to
+    run scenarious
+  executors:
+  - name: sh
+    platform: linux
+    command: 'mv ./malicious_curls.py -t #{host.dir.staged} && echo #{host.dir.staged}/malicious_curls.py'
+    code: null
+    language: null
+    build_target: null
+    payloads:
+    - malicious_curls.py
+    uploads: []
+    timeout: 300
+    parsers:
+    - module: plugins.stockpile.app.parsers.basic
+      parserconfigs:
+      - source: host.curls.script
+        edge: ''
+        target: ''
+        custom_parser_vals: {}
+    cleanup: []
+    variations: []
+    additional_info: {}
+  requirements:
+  - module: plugins.stockpile.app.requirements.paw_provenance
+    relationship_match:
+    - source: host.dir.staged
+      edge: ''
+      target: ''
+  privilege: ''
+  repeatable: false
+  buckets:
+  - collection
+  additional_info: {}
+  access: {}
+  singleton: true
+  plugin: ''
+  delete_payload: true
+  id: 029acfd0-2d05-4db4-bd94-86abf02bd92d

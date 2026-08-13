@@ -1,0 +1,11 @@
+name: 002 - FLAB - DoS Attack Scenario
+description: DoS Attack Scenario
+atomic_ordering:
+- cdb083d9-3d5e-479a-90a5-8a9c22f801e2
+- 029acfd0-2d05-4db4-bd94-86abf02bd92d
+- 918d91da-06c3-4884-829c-eebe0ce24555
+- 9533a1b8-5002-4539-8e22-98c25d48c338
+- 696e6587-5929-4b33-8fe6-41643f56b1f2
+- 42dab5f1-ca55-48be-ba78-dbac26c63b35
+adversary_id: 35f5c54c-025b-459b-a5d1-16f417cf9f92
+objective: 495a9828-cab1-44dd-a0ca-66e58177d8cc

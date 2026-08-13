@@ -1,0 +1,28 @@
+- requirements:
+  - module: plugins.stockpile.app.requirements.paw_provenance
+    relationship_match:
+    - source: host.dir.staged
+      edge: ''
+      target: ''
+  name: FLAB - upload miner_tls_client_sim.py
+  description: Uploads miner_tls_client_sim.py which should simulate crypto mining
+    client to a known port
+  tactic: collection
+  technique_id: T1005
+  technique_name: 'Data Staged: Local Data Staging'
+  singleton: true
+  executors:
+  - cleanup: []
+    timeout: 60
+    platform: linux
+    name: sh
+    payloads:
+    - miner_tls_client_sim.py
+    parsers:
+    - module: plugins.stockpile.app.parsers.basic
+      parserconfigs:
+      - source: host.python.cryptominer.script
+        edge: ''
+        target: ''
+    command: 'mv ./horizontal_scan.py -t  #{host.dir.staged} && echo #{host.dir.staged}/miner_tls_client_sim.py'
+  id: 618c673e-e000-418e-b196-13af8ec141b6

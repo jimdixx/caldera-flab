@@ -1,0 +1,9 @@
+name: 004 - FLAB - Horizontal Scanning
+description: Horizontal Scanning
+atomic_ordering:
+- cdb083d9-3d5e-479a-90a5-8a9c22f801e2
+- 22115c1b-966f-45c2-8b6d-097e44d4090e
+- 70f67627-8f6d-4a47-83c1-259f21de21b3
+- 42dab5f1-ca55-48be-ba78-dbac26c63b35
+adversary_id: eb74766c-955e-4b09-bea7-7c4c4327a255
+objective: 495a9828-cab1-44dd-a0ca-66e58177d8cc
