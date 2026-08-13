@@ -1,4 +1,4 @@
-starter.py
+./starter.py
 *.pyc
 *.crt
 *.exe
