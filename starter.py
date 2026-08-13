@@ -223,7 +223,7 @@ def main() -> int:
     config = load_config()
 
     try:
-        api_key = "VfVtU_Zf-G8KnHEgSdIzFQZXLJmlR0NGLPsWxcBFaLY"
+        api_key = "todo"
     except KeyError:
         raise RuntimeError(
             "Missing required configuration key: api_key_red"
